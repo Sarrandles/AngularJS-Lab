@@ -13,6 +13,7 @@
 <body>
 
   <div class=allDis ng-controller="FormController as test">
+    <!-- "as test" is makes FormController shorthand and gives it a nickname -->
     <h1>ToDo List</h1>
     <p>A place to store the things you have to do!</p>
 
@@ -21,7 +22,9 @@
       <li ng-repeat="items in test.toDoList | filter: itemFilter track by $index"> {{ items }} <a ng-click="test.removeItem($index)" href=""><i class="material-icons">highlight_off</i></a></li>
     </ol>
 <input type="text" ng-model="addItem" placeholder="Add your to-dos">
-    <button><a ng-click="test.addItem(addItem)" href="">Add</a></button>
+    <button ng-click="test.addItem(addItem)">Add</button>
+    <!-- ng-model is a way to extract information from inputs and bind it to other places -->
+    <!-- only works when you click the actual LINK and not the button?? -->
 
   </div>
 
