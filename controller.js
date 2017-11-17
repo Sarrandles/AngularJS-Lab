@@ -1,19 +1,21 @@
 (function() {
   function FormController() {
     var vm = this;
-    
-    vm.toDoList = ["Walk Syntax", "Do the laundry", "Eat all the tacos", "Git Gud", "Buy milk", "Bake a pie"];
 
-    vm.addItem = function(index) {
-      vm.toDoList.push(index);
+    vm.toDoList = ["Walk Syntax", "Cry about Angular", "Eat all the tacos", "Git Gud", "Find and delete misplaced semicolons", "Contemplate existence"];
+
+    vm.addItem = function(addTask) {
+      vm.toDoList.push(addTask);
+      vm.addTask="";
     };
+
     vm.removeItem = function(index) {
       vm.toDoList.splice(index, 1);
     };
   }
 
   angular
-    .module("moduleApp")
+    .module("app")
     .controller("FormController", FormController);
 
     //first parameter is name of our controller. the second parameter is the name of the function we want

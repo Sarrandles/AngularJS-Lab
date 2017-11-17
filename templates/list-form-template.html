@@ -1,0 +1,10 @@
+<div class=innerform>
+<input type="text" placeholder="Filter your to-dos" ng-model="$ctrl.itemFilter">
+    <ol>
+      <li ng-repeat="items in $ctrl.toDoList | filter: $ctrl.itemFilter track by $index" hover-directive> {{ items }} <a ng-click="$ctrl.removeItem($index)"
+        href=""><i class="material-icons" icon-hover-directive>close</i></a></li>
+    </ol>
+
+<input type="text" ng-model="$ctrl.addTask" placeholder="Add your to-dos">
+    <button ng-click="$ctrl.addItem($ctrl.addTask)">Add</button>
+</div>

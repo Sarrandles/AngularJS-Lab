@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="moduleApp" lang="en">
+<html ng-app="app" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,24 +12,17 @@
 </head>
 <body>
 
-  <div class=allDis ng-controller="FormController as test">
-    <!-- "as test" is makes FormController shorthand and gives it a nickname -->
-    <h1>ToDo List</h1>
-    <p>A place to store the things you have to do!</p>
+<task-form></task-form>
 
-<input type="text" placeholder="Filter your to-dos" ng-model="itemFilter">
-    <ol>
-      <li ng-repeat="items in test.toDoList | filter: itemFilter track by $index"> {{ items }} <a ng-click="test.removeItem($index)" href=""><i class="material-icons">highlight_off</i></a></li>
-    </ol>
-<input type="text" ng-model="addItem" placeholder="Add your to-dos">
-    <button ng-click="test.addItem(addItem)">Add</button>
-    <!-- ng-model is a way to extract information from inputs and bind it to other places -->
-    <!-- only works when you click the actual LINK and not the button?? -->
 
-  </div>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
   <script src="module.js"></script>
   <script src="controller.js"></script>
+  <script src="directive.js"></script>
+  <script src="mainformcomponent.js"></script>
+  <script src="innerformcomponent.js"></script>
+  <script src="reddirective.js"></script>
 </body>
 </html>
